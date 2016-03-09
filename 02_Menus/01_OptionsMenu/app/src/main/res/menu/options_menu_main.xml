@@ -2,8 +2,10 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
+        android:id="@+id/action_add_student"
         android:title="@string/action_add_student"
         android:icon="@drawable/ic_add"
         app:showAsAction="ifRoom"></item>
-    <item android:title="@string/action_logout"></item>
+    <item android:title="@string/action_logout"
+        android:id="@+id/action_logout"></item>
 </menu>

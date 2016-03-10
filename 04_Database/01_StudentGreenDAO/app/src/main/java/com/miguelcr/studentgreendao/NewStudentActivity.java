@@ -49,5 +49,8 @@ public class NewStudentActivity extends AppCompatActivity implements View.OnClic
         newStudent.setSex(sex);
 
         studentDao.insert(newStudent);
+
+        // destroy the current activity
+        finish();
     }
 }

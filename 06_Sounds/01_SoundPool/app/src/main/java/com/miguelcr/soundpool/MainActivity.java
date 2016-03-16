@@ -9,7 +9,7 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     SoundPool soundPool;
-    int sonidoExplosion;
+    int idSoundExplosion;
     Button btnPlay;
 
     @Override
@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // Player properties
         AudioAttributes aa = new AudioAttributes.Builder()
                 .setUsage(AudioAttributes.USAGE_ALARM)
-                .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
+                .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC)
                 .build();
 
         soundPool = new SoundPool.Builder()
@@ -33,11 +33,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 .build();
 
         // Load sound of guitar
-        sonidoExplosion = soundPool.load(this,R.raw.powerup,1);
+        idSoundExplosion = soundPool.load(this,R.raw.powerup,1);
     }
 
     @Override
     public void onClick(View v) {
-        soundPool.play(sonidoExplosion,1,1,0,0,1);
+
+        soundPool.play(idSoundExplosion,1,1,0,0,1);
     }
 }

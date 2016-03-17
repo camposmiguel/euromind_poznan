@@ -16,6 +16,7 @@ import android.view.View;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+    FloatingActionButton fab;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +25,7 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -43,6 +44,7 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         Fragment f = new GameFragment();
+        fab.setVisibility(View.INVISIBLE);
         getSupportFragmentManager().beginTransaction().add(R.id.container, f).commit();
 
     }
@@ -89,8 +91,11 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.nav_new_game) {
             fragmentToLoad = new GameFragment();
+            fab.setVisibility(View.INVISIBLE);
+
         } else if (id == R.id.nav_ranking) {
             fragmentToLoad = new RankingFragment();
+            fab.setVisibility(View.VISIBLE);
         } else if (id == R.id.nav_logout) {
             // Destroy the current Activity
             finish();

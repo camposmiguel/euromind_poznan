@@ -38,6 +38,8 @@ public class GameFragment extends Fragment implements View.OnClickListener {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_game, container, false);
 
+        random = new Random();
+
         v.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override
             public void onGlobalLayout() {
@@ -53,7 +55,6 @@ public class GameFragment extends Fragment implements View.OnClickListener {
             }
         });
 
-        random = new Random();
 
         layout = (RelativeLayout) v.findViewById(R.id.layout);
         duck = (ImageView) v.findViewById(R.id.duck);

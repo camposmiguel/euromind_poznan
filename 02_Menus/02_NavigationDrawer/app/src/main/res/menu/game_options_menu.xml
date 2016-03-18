@@ -8,6 +8,7 @@
         app:showAsAction="ifRoom|withText" />
 
     <item android:title="New game"
+        android:id="@+id/resetGame"
         android:icon="@android:drawable/ic_media_play"
         app:showAsAction="ifRoom" />
 

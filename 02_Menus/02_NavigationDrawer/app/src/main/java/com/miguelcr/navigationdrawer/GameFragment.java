@@ -111,5 +111,15 @@ public class GameFragment extends Fragment implements View.OnClickListener {
         itemCounter = menu.findItem(R.id.counterItem);
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.resetGame:
+                counter = 0;
+                itemCounter.setTitle("0");
+                break;
+        }
 
+        return true;
+    }
 }
